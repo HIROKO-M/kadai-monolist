@@ -25,5 +25,10 @@ Route::get('logout', 'Auth\AuthController@getLogout')->name('logout.get');
 
 // 楽天アイテム
 Route::group(['middleware' => 'auth'], function (){
-    Route::resource('items', 'ItemsController', ['only' => ['create']]);
+    Route::resource('items', 'ItemsController', ['only' => ['create', 'show']]);
+    
+    Route::post('want', 'ItemsUserController@want')->name('item_user.want');
+    Route::delete('want', 'ItemsUserController@dont_want')->name('item_user.dont_want');
+    
+    Route::resource('users', 'UsersController', ['only' => ['show']]);
 });

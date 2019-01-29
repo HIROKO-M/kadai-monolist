@@ -14,13 +14,8 @@ class WelcomeController extends Controller
 
     public function index()
     {
-
-/*
- *        $items = Item::orderBy('updated_at', 'desc')-> paginate(20);    // Item からupdated_at順に20個ずつ取り出し
- *       return view('welcome', [ 'items' => $items, ]);                 // item をTopページに表示
-*/
-
-    return view('welcome');
+        $items = Item::orderBy('updated_at', 'desc')-> paginate(20);    // Item からupdated_at順に20個ずつ取り出し
+        return view('welcome', [ 'items' => $items, ]);                 // item をTopページに表示
 
     }
 }

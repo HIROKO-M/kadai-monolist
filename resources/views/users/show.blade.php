@@ -8,6 +8,7 @@
         <div class="name text-center">
             <h1>{{ $user->name }}</h1>
         </div>
+        
         <div class="status text-center">
             <ul>
                 <li>
@@ -25,6 +26,8 @@
             </ul>
         </div>
     </div>
+    
     @include('items.items', ['items' => $items])
     {!! $items->render() !!}
+
 @endsection
