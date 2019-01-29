@@ -14,16 +14,18 @@
 
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
+    
     <body>
         @include('commons.navbar')
-
+        
         @yield('cover')
-
+        
         <div class="container">
             @include('commons.error_messages')
             @yield('content')
         </div>
-
+        
         @include('commons.footer')
+
     </body>
 </html>
